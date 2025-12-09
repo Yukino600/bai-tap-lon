@@ -1,4 +1,4 @@
-# Environment variables - NEVER push this!
+#Use your own apis
 .env
 
 # Dependencies
