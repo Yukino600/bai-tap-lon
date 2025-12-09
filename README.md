@@ -1,8 +1,7 @@
 <!-- Animated Header -->
 <div align="center">
   
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A277FF&center=true&vCenter=true&width=940&lines=Hello+there+%F0%9F%91%8B%2C+I'm+MayMeow!+%E2%9C%A8;Scripter+by+Day+%26+Night+%F0%9F%8C%99;AI+Digital+Creator+%F0%9F%A4%96%E2%9C%A8)](https://git.io/typing-svg)
-
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A277FF&center=true&vCenter=true&width=940&lines=Hello+there%2C+I'm+Heisenberg;Welcome+to+our+project;Have+a+good+day+mister)](https://git.io/typing-svg)
 </div>
 
 <!-- Glowing divider -->
@@ -62,12 +61,9 @@ type: "School Project"
 status: "In Development"
 ```
 
-- 📚 **Project Type:** School Assignment
-- 🛠️ **Built With:** HTML, CSS, JavaScript, Node.js, MongoDB
-- 🎯 **Goal:** Learning full-stack web development
-- 💬 **Questions?** Feel free to reach out!
-  - 🐘 [Mastodon](https://social.lol/@may)
-  - ✈️ [Telegram](https://t.me/MayMeow_w)
+-  **Project Type:** School Assignment
+-  **Built With:** HTML, CSS, JavaScript, Node.js, MongoDB
+-  **Goal:** Learning full-stack web development
 
 <!-- Anime divider -->
 <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="100%">
@@ -76,12 +72,12 @@ status: "In Development"
 
 <div align="center">
 
-| 🎮 Member | 🎯 Role |
+|  Member |  Role |
 |-----------|---------|
-| **Member 1** | Frontend Developer |
-| **Member 2** | Backend Developer |
-| **Member 3** | Database Manager |
-| **Member 4** | UI/UX Designer |
+| Phạm Hoàng Tùng | Trưởng nhóm |
+| Lê Thanh Tùng | cheerlander |
+| Vũ Quốc Việt | Frontend designer |
+| Đỗ Thế Vinh | Backend developer |
 
 </div>
 
@@ -93,8 +89,8 @@ status: "In Development"
 
 <div align="center">
   
-### ✨ May the code be with you! ✨
-
-[![Visitors](https://visitor-badge.laobi.icu/badge?page_id=MayMeow.MayMeow)](https://github.com/MayMeow)
+### ✨ May the code be with you! ✝️ ✨
 
 </div>
+</div>
+
