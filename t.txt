@@ -1,0 +1,64 @@
+# Football News Website - Setup Instructions
+
+## Prerequisites
+- Node.js installed
+- MongoDB installed and running
+
+## Installation Steps
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Start MongoDB
+Make sure MongoDB is running on your system:
+```bash
+# Windows (if MongoDB is installed as a service)
+net start MongoDB
+
+# Or run mongod manually
+mongod
+```
+
+### 3. Start the Server
+```bash
+npm start
+```
+
+The server will run on http://localhost:3000
+
+### 4. Open the Website
+Open `football-news.html` in your browser
+
+## Database Information
+- **Database Name:** btl
+- **Collections:**
+  - `users` - User accounts
+  - `comments` - Article comments
+
+## API Endpoints
+
+### Authentication
+- `POST /api/signup` - Create new account
+- `POST /api/login` - Login
+- `GET /api/profile` - Get user profile (protected)
+
+### Comments
+- `GET /api/comments/:articleId` - Get comments for article
+- `POST /api/comments` - Add comment (protected)
+- `POST /api/comments/:commentId/like` - Like comment (protected)
+
+## Features
+- User registration and login with MongoDB
+- JWT authentication
+- Password hashing with bcrypt
+- Secure comment system
+- Data persistence in MongoDB
+
+## Development Mode
+To run with auto-restart on file changes:
+```bash
+npm run dev
+```
+#

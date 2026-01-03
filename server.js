@@ -16,7 +16,7 @@ const FOOTBALL_DATA_API_KEY = process.env.FOOTBALL_DATA_API_KEY;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('.'));
+app.use(express.static(__dirname));
 
 // MongoDB Connection
 mongoose.connect(MONGODB_URI, {
