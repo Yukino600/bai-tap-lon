@@ -16,6 +16,7 @@ const FOOTBALL_DATA_API_KEY = process.env.FOOTBALL_DATA_API_KEY;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('src'));
 app.use(express.static(__dirname));
 
 // MongoDB Connection
@@ -755,9 +756,37 @@ app.get('/api/all-fixtures', async (req, res) => {
     }
 });
 
-// Serve homepage
+// Serve HTML pages
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/football-news.html');
+    res.sendFile(__dirname + '/src/pages/football-news.html');
+});
+
+app.get('/football-news.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/football-news.html');
+});
+
+app.get('/latest.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/latest.html');
+});
+
+app.get('/article.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/article.html');
+});
+
+app.get('/fixtures.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/fixtures.html');
+});
+
+app.get('/tables.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/tables.html');
+});
+
+app.get('/login.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/login.html');
+});
+
+app.get('/search.html', (req, res) => {
+    res.sendFile(__dirname + '/src/pages/search.html');
 });
 
 // Start server

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Football News</title>
+    <link rel="stylesheet" href="../styles/football-news.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                    <span>FOOTBALL NEWS</span>
+                </div>
+                <nav class="nav">
+                    <a href="football-news.html">Home</a>
+                    <a href="latest.html">Latest</a>
+                    <a href="fixtures.html">Fixtures</a>
+                    <a href="tables.html">Tables</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <main class="container">
+        <div style="padding: 40px 0;">
+            <h1 style="margin-bottom: 30px;">Search News</h1>
+            
+            <div style="max-width: 500px; margin-bottom: 40px;">
+                <input type="text" id="searchInput" placeholder="Search for news, teams, players..." 
+                    style="width: 100%; padding: 15px; font-size: 16px; border: 2px solid #ff6b35; border-radius: 4px;">
+            </div>
+
+            <!-- Search Results -->
+            <div id="searchResults" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                <p style="grid-column: 1/-1; text-align: center; color: #999;">Enter a search term to find articles</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/football-news.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', async (e) => {
+            const query = e.target.value.trim();
+            const resultsDiv = document.getElementById('searchResults');
+            
+            if (query.length < 2) {
+                resultsDiv.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">Enter a search term to find articles</p>';
+                return;
+            }
+            
+            try {
+                resultsDiv.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Searching...</p>';
+                
+                // Search in local articles or API
+                const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+                const articles = await response.json();
+                
+                if (articles.length === 0) {
+                    resultsDiv.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999;">No articles found</p>';
+                } else {
+                    resultsDiv.innerHTML = articles.map(article => `
+                        <div class="article-card" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer;">
+                            <h3 style="margin-bottom: 10px; color: #ff6b35;">${article.title}</h3>
+                            <p style="color: #666; margin-bottom: 10px;">${article.description || article.content?.substring(0, 100)}</p>
+                            <small style="color: #999;">${new Date(article.date).toLocaleDateString()}</small>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: red;">Error searching: ' + error.message + '</p>';
+            }
+        });
+    </script>
+</body>
+</html>
